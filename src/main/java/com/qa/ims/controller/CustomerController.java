@@ -29,15 +29,18 @@ public class CustomerController implements CrudController<Customer> {
 	/**
 	 * Reads all customers to the logger
 	 */
-	@Override
-	public List<Customer> readAll() {
-		List<Customer> customers = customerDAO.readAll();
-		for (Customer customer : customers) {
-			LOGGER.info(customer);
-		}
-		return customers;
-	}
-
+	
+	@Override 
+    public List<Customer> readAll() {
+        List<Customer> customers = customerDAO.readAll();
+        for (Customer customer : customers) {
+            LOGGER.info(customer);
+        }
+        return customers;
+    }
+	
+	
+	
 	/**
 	 * Creates a customer by taking in user input
 	 */
@@ -51,6 +54,7 @@ public class CustomerController implements CrudController<Customer> {
 		LOGGER.info("Customer created");
 		return customer;
 	}
+	
 
 	/**
 	 * Updates an existing customer by taking in user input
