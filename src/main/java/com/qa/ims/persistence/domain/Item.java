@@ -6,15 +6,15 @@ public class Item {
 	Double productPrice;
 	String productName;
 
-	public Item(String productName, double productPrice) {
+	public Item(String productName, Double productPrice) {
 		this.setProductName(productName);
 		this.setProductPrice(productPrice);
 	}
 
-	public Item(Long productID, double productPrice, String productName) {
+	public Item(Long productID, Double productPrice, String productName) {
 		this.setProductID(productID);
 		this.setProductPrice(productPrice);
-		this.setProductName(productName);
+		this.setProductName(productName); 
 	}
 
 	public Long getProductID() {

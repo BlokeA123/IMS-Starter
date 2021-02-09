@@ -41,7 +41,7 @@ public class ItemController implements CrudController<Item> {
 		Item item = itemDAO.create(new Item(productName, productPrice));
 		LOGGER.info("Item created");
 		return item;
-	}
+	}  
 
 	@Override
 	public Item update() {
