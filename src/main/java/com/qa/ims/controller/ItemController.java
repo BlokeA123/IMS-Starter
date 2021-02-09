@@ -45,7 +45,7 @@ public class ItemController implements CrudController<Item> {
 
 	@Override
 	public Item update() {
-		LOGGER.info("Please enter the id of the customer you would like to update");
+		LOGGER.info("Please enter the id of the product you would like to update");
 		Long productID = utils.getLong();
 		LOGGER.info("Please enter a product name");
 		String productName = utils.getString();
