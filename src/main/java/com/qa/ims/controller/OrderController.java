@@ -23,7 +23,7 @@ public class OrderController implements CrudController<Order> {
 		super();
 		this.orderDAO = orderDAO;
 		this.utils = utils;
-	}
+	} 
 
 	@Override
 	public List<Order> readAll() {
@@ -36,39 +36,42 @@ public class OrderController implements CrudController<Order> {
 	}
 
 	@Override
-	public Order create() {
-		boolean additem = true;
+	public Order create() { 
+		boolean addItem = true;
 		LOGGER.info("Please enter a customer ID");
 		Long id = utils.getLong();
 		Order order = orderDAO.create(new Order(id));
-		while (additem) {
+		while (addItem) {
 			LOGGER.info("Do you want to add an item? Y/N");
 			String choice = utils.getString();
 			if (choice.toLowerCase().equals("y")) {
 				ordContObj.create(order.getOrderID());
-			} else {
-				additem = false;
+			} else { 
+				addItem = false;
 			}
 		}
+	
 		LOGGER.info("Order created");
 		return order;
-	}
+}
+
+
 
 	@Override
 	public Order update() {
-		boolean updateitems = true;
+		boolean updateItems = true;
 		LOGGER.info("Please enter a customer ID");
 		Long id = utils.getLong();
-		LOGGER.info("Please enter an order ID");
+		LOGGER.info("Please enter an order ID"); 
 		Long orderID = utils.getLong();
 		Order order = orderDAO.update(new Order(orderID, id));
-		while (updateitems) {
+		while (updateItems) {
 			LOGGER.info("Do you want to update items to your order? Y/N");
 			String choice2 = utils.getString();
 			if (choice2.toLowerCase().equals("y")) {
 				ordContObj.update();
 			} else {
-				updateitems = false;
+				updateItems = false;
 			} 			
 			LOGGER.info("Order Updated");
 		}
@@ -77,16 +80,16 @@ public class OrderController implements CrudController<Order> {
 
 	@Override
 	public int delete() {
-		boolean deleteitems = true;
+		boolean deleteItems = true;
 		LOGGER.info("Please enter your order ID.");
 		Long orderID = utils.getLong();
-		while(deleteitems) {
+		while(deleteItems) {
 		LOGGER.info("Would you like to delete an item from an order or an entire order? ITEMS/ORDER");
 		String choice3 = utils.getString();
 			if(choice3.toLowerCase().equals("items")) {
 				ordContObj.delete(orderID);
 			}else {
-				deleteitems = false;
+				deleteItems = false;
 			}
 		LOGGER.info("Order deleted");
 		//orderitemsDAO.delete(orderID);

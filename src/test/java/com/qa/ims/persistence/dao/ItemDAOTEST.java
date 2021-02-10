@@ -7,9 +7,13 @@ import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.junit.MockitoJUnitRunner;
 
 import com.qa.ims.persistence.domain.Item;
 import com.qa.ims.utils.DBUtils;
+@RunWith(MockitoJUnitRunner.class)
+
 
 public class ItemDAOTEST {
 	private final ItemDAO DAO = new ItemDAO();

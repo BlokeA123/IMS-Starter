@@ -6,15 +6,25 @@ public class Order {
 	Long id;
 	
 	
+
+
 	public Order(Long id) {
-		this.setId(id);
+		super();
+		this.id = id;
 	}
+
+
+	
 
 
 	public Order(Long orderID, Long id) {
-		this.setOrderID(orderID);
-		this.setId(id);
+		super();
+		this.orderID = orderID;
+		this.id = id;
 	}
+
+
+
 
 
 	public Long getOrderID() {
