@@ -1,4 +1,5 @@
 package com.qa.ims.persistence.dao;
+
 import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
@@ -9,48 +10,48 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.junit.MockitoJUnitRunner;
 
-import com.qa.ims.persistence.domain.Order;
+
+import com.qa.ims.persistence.domain.OrderItems;
 import com.qa.ims.utils.DBUtils;
 
 
-
 @RunWith(MockitoJUnitRunner.class)
-public class OrderDAOTest {
-	private final OrderDAO DAO = new OrderDAO();
+public class OrderItemsDAOTest {
+	private final OrderItemsDAO DAO = new OrderItemsDAO();
 
 	@Before
 	public void setup() {
 		DBUtils.connect();
 		DBUtils.getInstance().init("src/test/resources/sql-schema.sql", "src/test/resources/sql-data.sql");
 	}
- 
+
 	@Test
 	public void testCreate() {
-		final Order created = new Order(1L, 1L);
+		final OrderItems created = new OrderItems(1L, 1L, 1D);
 		assertEquals(created, DAO.create(created));
 	}
-	
+
 	@Test
 	public void testReadAll() {
-		List<Order> expected = new ArrayList<>();
-		expected.add(new Order(1L, 1L));
+		List<OrderItems> expected = new ArrayList<>();
+		expected.add(new OrderItems(1L, 1L, 1D));
 		assertEquals(expected, DAO.readAll());
 	}
-	
+
 	@Test
 	public void testReadLatest() {
-		assertEquals(new Order(1L), DAO.readLatest());
+		assertEquals(new OrderItems(1L, 1L, 1D), DAO.readLatest());
 	}
-	
+
 	@Test
 	public void testRead() {
 		final long ID = 1L;
-		assertEquals(new Order(ID), DAO.read(ID));
+		assertEquals(new OrderItems(ID, 1L, 1D), DAO.read(ID));
 	}
-	
+
 	@Test
 	public void testUpdate() {
-		final Order updated = new Order(1L, 1L);
+		final OrderItems updated = new OrderItems(1L, 1L, 1D);
 		assertEquals(updated, DAO.update(updated));
 
 	}

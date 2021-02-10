@@ -42,7 +42,7 @@ public class OrderItemsDAO implements Dao<OrderItems>{
 		Double productPrice = resultSet.getDouble("totalCost");
 		return new OrderItems(productPrice);
 	}
-	
+	 
 	
 	
 	@Override
