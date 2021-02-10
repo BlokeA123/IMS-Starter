@@ -73,35 +73,40 @@ public class OrderControllerTest {
 //
 //		Mockito.verify(dao, Mockito.times(1)).readAll();
 //	}
-////
-//	@Test
-//	public void testUpdate() {
-//		Item updated = new Item(1L, 1.99, "Sock");
 //
-//		Mockito.when(this.utils.getLong()).thenReturn(1L);
-//		Mockito.when(this.utils.getDouble()).thenReturn(updated.getProductPrice());
-//		Mockito.when(this.utils.getString()).thenReturn(updated.getProductName());
-//		Mockito.when(this.dao.update(updated)).thenReturn(updated);
-//		//Mockito.when(this.utils.getString()).thenReturn(updated.getFirstName(), updated.getSurname());
-//
-//		assertEquals(updated, this.controller.update());
-//
-//		Mockito.verify(this.utils, Mockito.times(1)).getLong();
-//		Mockito.verify(this.utils, Mockito.times(1)).getString();
-//		Mockito.verify(this.dao, Mockito.times(1)).update(updated);
-//	}
-//
-//	@Test
-//	public void testDelete() {
-//		final long ID = 1L;
-//
-//		Mockito.when(utils.getLong()).thenReturn(ID);
-//		Mockito.when(dao.delete(ID)).thenReturn(1);
-//
-//		assertEquals(1L, this.controller.delete());
-//
-//		Mockito.verify(utils, Mockito.times(1)).getLong();
-//		Mockito.verify(dao, Mockito.times(1)).delete(ID);
-//	}
+	@Test
+	public void testUpdate() {
+		
+		final Long orderID = 1L;
+		final String choice2 = "n";
+		final Long id = 1L;
+		Order updated = new Order(orderID, id);
+
+		Mockito.when(this.utils.getLong()).thenReturn(1L); 
+		Mockito.when(this.utils.getString()).thenReturn(choice2);
+		Mockito.when(this.dao.update(updated)).thenReturn(updated);
+		
+		assertEquals(updated, this.controller.update()); 
+
+		Mockito.verify(this.utils, Mockito.times(1)).getLong();
+		Mockito.verify(this.utils, Mockito.times(1)).getString();
+		Mockito.verify(this.dao, Mockito.times(1)).update(updated);
+	} 
+ 
+	@Test 
+	public void testDelete() {
+		final Long ID = 1L;
+		final String choice3 = "order";
+		
+		Mockito.when(utils.getLong()).thenReturn(ID);
+		Mockito.when(dao.delete(ID)).thenReturn(1);
+		Mockito.when(utils.getString()).thenReturn(choice3);
+
+		assertEquals(1L, this.controller.delete());
+
+		Mockito.verify(utils, Mockito.times(1)).getLong();
+		Mockito.verify(utils, Mockito.times(1)).getString();
+		Mockito.verify(dao, Mockito.times(1)).delete(ID);
+	}
 
 }

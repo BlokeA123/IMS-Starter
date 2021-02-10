@@ -88,7 +88,7 @@ public class OrderController implements CrudController<Order> {
 		String choice3 = utils.getString();
 			if(choice3.toLowerCase().equals("items")) {
 				ordContObj.delete(orderID);
-			}else {
+			}else { 
 				deleteItems = false;
 			}
 		LOGGER.info("Order deleted");
