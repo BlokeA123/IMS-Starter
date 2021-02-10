@@ -29,7 +29,7 @@ public class ItemDAOTEST {
 		final Item created = new Item(2L, 2.00, "Boot");
 		assertEquals(created, DAO.create(created));
 	}
-	
+	 
 	@Test
 	public void testReadAll() {
 		List<Item> expected = new ArrayList<>();
