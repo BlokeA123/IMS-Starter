@@ -25,7 +25,7 @@ public class OrderItemsController implements CrudController<OrderItems> {
 		this.utils = utils;
 	}
 
-	@Override
+	@Override 
 	public List<OrderItems> readAll() {
 		List<OrderItems> orderitems = orderitemsDAO.readAll();
 		for (OrderItems orderitem : orderitems) {
@@ -45,7 +45,7 @@ public class OrderItemsController implements CrudController<OrderItems> {
 		LOGGER.info("Here is your total cost of your order : " + orderitemsDAO.calcOrderCost(orderID));
 		LOGGER.info("Item/s Added.");
 
-		return orderitem;
+		return orderitem; 
 	}
    
 	@Override
@@ -60,7 +60,7 @@ public class OrderItemsController implements CrudController<OrderItems> {
 		LOGGER.info("Item Updated");
 		return orderitem;
 	}
-
+ 
 	public int delete(Long orderID) {
 		LOGGER.info("Enter the product ID of the product you would like to delete in your order?");
 		Long productID = utils.getLong();
