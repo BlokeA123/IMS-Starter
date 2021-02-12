@@ -1,4 +1,4 @@
-Coverage: 34%
+Coverage: 66.3%
 # Inventory Management System
 A program for inventory management which allows a user to create customers, items, orders and manipulation of these. 
 
