@@ -91,8 +91,7 @@ public class OrderController implements CrudController<Order> {
 			}else { 
 				deleteItems = false;
 			}
-		LOGGER.info("Order deleted");
-		//orderitemsDAO.delete(orderID);
+		LOGGER.info("Order deleted"); 
 		return orderDAO.delete(orderID);
 	}
 		return 0;

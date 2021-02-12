@@ -37,7 +37,7 @@ public class OrderItemsController implements CrudController<OrderItems> {
 	public OrderItems create(Long orderID) {
 		LOGGER.info("Please enter a product ID you wish to add");
 		LOGGER.info("Here are the list of items you can add to your order");
-		itmCont.readAll();
+		itmCont.readAll(); 
 		Long productID = utils.getLong();
 		LOGGER.info("Please enter a quantity you wish to have");
 		Double quantity = utils.getDouble();
