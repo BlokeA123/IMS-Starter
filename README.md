@@ -2,6 +2,14 @@ Coverage: 66.3%
 # Inventory Management System
 A program for inventory management which allows a user to create customers, items, orders and manipulation of these. 
 
+
+
+# Jira
+```
+https://nadams.atlassian.net/jira/software/c/projects/IM/boards/1/roadmap
+```
+
+
 ### Prerequisites
 
 What things you need to install the software and how to install them
